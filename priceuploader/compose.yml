@@ -1,0 +1,17 @@
+version: "3.8"
+
+networks:
+  pricer:
+    name: pricer
+    driver: bridge
+
+services:
+  pricer_app:
+    container_name: pricer_app_container
+    build: .
+    networks:
+      - pricer
+    restart: unless-stopped
+    env_file: ./env/.env
+    volumes:
+      - ./data:/app/data

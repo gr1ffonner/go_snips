@@ -1,0 +1,17 @@
+version: "3.8"
+
+networks:
+  network_stakingnftmeta_api_dev:
+    name: network_stakingnftmeta_api_dev
+    driver: bridge
+
+services:
+  stakingnftmeta_api_dev:
+    container_name: stakingnftmeta_api_dev
+    build: .
+    networks:
+      - network_stakingnftmeta_api_dev
+    restart: unless-stopped
+    env_file: ./env/.env
+    volumes:
+      - ./data:/app/data

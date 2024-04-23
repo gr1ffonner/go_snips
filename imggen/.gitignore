@@ -1,0 +1,7 @@
+.env
+env/.env
+.null-ls*
+generated/
+images/
+
+.DS_Store
